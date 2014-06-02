@@ -74,7 +74,14 @@ implements ActionListener {
 			/*move this code to another event or function
 			 */      
 
-			String ReportPath = "Respaldo del Reporte semanal";
+			Calendar calendar = Calendar.getInstance();				
+			String ReportPath = "Respaldo del Reporte semanal -" +
+					calendar.get(Calendar.YEAR) + 
+					String.format("%02d", calendar.get(Calendar.MONTH)+1) +
+					String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH)+1) + "-" +
+					calendar.get(Calendar.HOUR_OF_DAY)  +
+					calendar.get(Calendar.MINUTE) + 
+					calendar.get(Calendar.SECOND);
 			File ReportDestDir = new File(ReportPath);
 			ReportDestDir.mkdir();
 
